@@ -7,6 +7,9 @@ body {
     color: white;
     font-family: consolas;
     overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
 }
 
 .title {
@@ -15,16 +18,17 @@ body {
 }
 
 .container {
-    height: 80vh;
+    height: 70vh;
     width: 90vw;
     border: 1px solid rgba(255, 255, 255, 0.5);
     overflow: hidden;
-    margin-left: 50%;
+    margin-left: 48%;
     transform: translate(-50%);
-    border-radius: 5px;background-image: linear-gradient(to right, transparent 4vh, rgba(65, 65, 65, 0.5) 1px),linear-gradient(to bottom, transparent 4vh, rgba(65, 65, 65, 0.5) 1px);
-    background-size: calc(4vh + 1px) calc(4vh + 1px);
-    background-attachment: fixed;
-    background-position: 33px 23px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, transparent 30px, rgba(65, 65, 65, 0.5) 1px),linear-gradient(to bottom, transparent 30px, rgba(65, 65, 65, 0.5) 1px);
+    background-size: calc(30px + 1px) calc(30px + 1px);
+    background-position: calc(50% - 15.5px) calc(50% - 15px);
+    background-attachment:fixed;
 }
 
 .sun {
