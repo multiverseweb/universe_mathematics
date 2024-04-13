@@ -1,0 +1,134 @@
+:root {
+    --r: 9.8;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: consolas;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 3vh;
+    text-align: center;
+}
+
+.container {
+    height: 80vh;
+    width: 90vw;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    margin-left: 50%;
+    transform: translate(-50%);
+    border-radius: 5px;background-image: linear-gradient(to right, transparent 4vh, rgba(65, 65, 65, 0.5) 1px),linear-gradient(to bottom, transparent 4vh, rgba(65, 65, 65, 0.5) 1px);
+    background-size: calc(4vh + 1px) calc(4vh + 1px);
+    background-attachment: fixed;
+    background-position: 33px 23px;
+}
+
+.sun {
+    height: calc(0.8px * var(--r));
+    width: calc(0.8px * var(--r));
+    border-radius: 50%;
+    background-image: radial-gradient(orange,yellow);
+    box-shadow: 0px 0px 20px rgb(255, 213, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbit {
+    background-color: #00000000;
+    height: calc(10px * var(--r));
+    width: calc(10px * var(--r));
+    border: 1px solid rgba(255, 255, 255, 0.386);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation-name: rotate;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 0% 0%;
+    border-radius: 50%;
+    z-index: -1;
+}
+.orbit2{
+    background-color: #ffffff00;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.386);
+    height: calc(0.5px * var(--r));
+    width: calc(0.5px * var(--r));
+    position: absolute;
+    margin: calc(1.46px * var(--r));
+    animation-name: rotate;
+    animation-duration: 2.2423s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: 0% 0%;
+}
+.earth{
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: calc(0.1px * var(--r));
+    width: calc(0.1px * var(--r));
+    position: absolute;
+    margin: calc(0.2px * var(--r));
+}
+
+.moon{
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: calc(0.05px * var(--r));
+    width: calc(0.05px * var(--r));
+    position: absolute;
+    margin: calc(0.047px * var(--r));
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg)translate(-50%, -50%);
+    }
+    50%{
+        transform: rotate(180deg) translate(-50%, -50%);
+    }
+    100%{
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}
+/* The slider itself */
+#slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80%;
+    height: 1px;
+    background: #ffffff;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: 20px;
+}
+
+#slider:hover {
+    opacity: 1;
+}
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 20px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    cursor: pointer;
+}
