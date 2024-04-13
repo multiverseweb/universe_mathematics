@@ -1,107 +1,240 @@
-:root {
-    --r: 9.8;
-}
-
 body {
     background-color: black;
     color: white;
-    font-family: consolas;
+    font-family:'Courier New', Courier, monospace;
     overflow: hidden;
     height: 100vh;
     width: 100vw;
     position: fixed;
 }
 
-.title {
-    font-size: 3vh;
-    text-align: center;
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
+:root {
+    --time: 30;
+}
+
+
 .container {
-    height: 70vh;
     width: 90vw;
+    height: 75vh;
     border: 1px solid rgba(255, 255, 255, 0.5);
     overflow: hidden;
     margin-left: 48%;
     transform: translate(-50%);
     border-radius: 5px;
+    margin-top: 20px;
     background-image: linear-gradient(to right, transparent 30px, rgba(65, 65, 65, 0.5) 1px),linear-gradient(to bottom, transparent 30px, rgba(65, 65, 65, 0.5) 1px);
     background-size: calc(30px + 1px) calc(30px + 1px);
     background-position: calc(50% - 15.5px) calc(50% - 15px);
     background-attachment:fixed;
 }
 
+.title {
+    text-align: center;
+    margin-top:30px;
+}
+
+
+
+
 .sun {
-    height: calc(0.8px * var(--r));
-    width: calc(0.8px * var(--r));
-    border-radius: 50%;
-    background-image: radial-gradient(orange,yellow);
-    box-shadow: 0px 0px 20px rgb(255, 213, 0);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%) translateY(-50%);
+    height: 5vw;
+    width: 5vw;
+    background: radial-gradient(orange,yellow);
+    box-shadow: 0px 0px 20px rgb(255, 179, 0);
+    border-radius: 50%;
 }
 
 .orbit {
-    background-color: #00000000;
-    height: calc(10px * var(--r));
-    width: calc(10px * var(--r));
-    border: 1px solid rgba(255, 255, 255, 0.386);
+    background-color: rgba(87, 87, 87, 0);
+    border: 1px solid rgba(120, 120, 120, 0.57);
+    border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
-    animation-name: rotate;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    transform-origin: 0% 0%;
-    border-radius: 50%;
-    z-index: -1;
-}
-.orbit2{
-    background-color: #ffffff00;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.386);
-    height: calc(0.5px * var(--r));
-    width: calc(0.5px * var(--r));
-    position: absolute;
-    margin: calc(1.46px * var(--r));
-    animation-name: rotate;
-    animation-duration: 2.2423s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    transform-origin: 0% 0%;
-}
-.earth{
-    background-color: #ffffff;
-    border-radius: 50%;
-    height: calc(0.1px * var(--r));
-    width: calc(0.1px * var(--r));
-    position: absolute;
-    margin: calc(0.2px * var(--r));
+    transform: translateX(-50%) translateY(-50%);
 }
 
-.moon{
-    background-color: #ffffff;
-    border-radius: 50%;
-    height: calc(0.05px * var(--r));
-    width: calc(0.05px * var(--r));
-    position: absolute;
-    margin: calc(0.047px * var(--r));
+#o1 {
+    height: 10vw;
+    width: 10vw;
 }
 
-@keyframes rotate{
-    0%{
-        transform: rotate(0deg)translate(-50%, -50%);
+#o2 {
+    height: 15vw;
+    width: 15vw;
+}
+
+#o3 {
+    height: 20vw;
+    width: 20vw;
+}
+
+#o4 {
+    height: 25vw;
+    width: 25vw;
+}
+
+#o5 {
+    height: 30vw;
+    width: 30vw;
+}
+
+#o6 {
+    height: 35vw;
+    width: 35vw;
+}
+
+#o7 {
+    height: 40vw;
+    width: 40vw;
+}
+
+#o8 {
+    height: 45vw;
+    width: 45vw;
+}
+
+.p {
+    animation-name: revolve;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background-color: rgba(87, 87, 87, 0);
+    border: none;
+    /*border-radius: 50%;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.planet {
+    height: 1vw;
+    width: 1vw;
+    margin-top: -0.7vw;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#mercury {
+    background-color: rgb(165, 75, 42);
+}
+
+#venus {
+    background-color: rgb(222, 163, 0);
+}
+
+#earth {
+    background: linear-gradient(green, blue)
+}
+
+#mars {
+    background-color: rgb(165, 48, 42);
+}
+
+#jupiter {
+    background-color: rgb(201, 122, 73);
+}
+
+#saturn {
+    background-color: rgb(255, 219, 121);
+}
+
+#uranus {
+    background-color: rgb(146, 255, 248);
+}
+
+#neptune {
+    background-color: rgb(0, 91, 238);
+}
+
+#p1 {
+    height: 10vw;
+    width: 10vw;
+    margin-left: -5vw;
+    margin-top: -5vw;
+    animation-duration: calc(0.241s *var(--time));
+}
+
+#p2 {
+    height: 15vw;
+    width: 15vw;
+    margin-left: -7.5vw;
+    margin-top: -7.5vw;
+    animation-duration: calc(0.615s *var(--time));
+}
+
+#p3 {
+    height: 20vw;
+    width: 20vw;
+    margin-left: -10vw;
+    margin-top: -10vw;
+    animation-duration: calc(1s *var(--time));
+}
+
+#p4 {
+    height: 25vw;
+    width: 25vw;
+    margin-left: -12.5vw;
+    margin-top: -12.5vw;
+    animation-duration: calc(1.88s *var(--time));
+}
+
+#p5 {
+    height: 30vw;
+    width: 30vw;
+    margin-left: -15vw;
+    margin-top: -15vw;
+    animation-duration: calc(11.9s *var(--time));
+}
+
+#p6 {
+    height: 35vw;
+    width: 35vw;
+    margin-left: -17.5vw;
+    margin-top: -17.5vw;
+    animation-duration: calc(29.4s *var(--time));
+}
+
+#p7 {
+    height: 40vw;
+    width: 40vw;
+    margin-left: -20vw;
+    margin-top: -20vw;
+    animation-duration: calc(83.7s *var(--time));
+}
+
+#p8 {
+    height: 45vw;
+    width: 45vw;
+    margin-left: -22.5vw;
+    margin-top: -22.5vw;
+    animation-duration: calc(163.7s *var(--time));
+}
+
+@keyframes revolve {
+    0% {
+        transform: rotate(0deg);
     }
-    50%{
-        transform: rotate(180deg) translate(-50%, -50%);
-    }
-    100%{
-        transform: rotate(360deg) translate(-50%, -50%);
+
+    100% {
+        transform: rotate(360deg);
     }
 }
+
+
 /* The slider itself */
 #slider {
     -webkit-appearance: none;
@@ -115,7 +248,7 @@ body {
     transition: opacity .2s;
     margin-left: 50%;
     transform: translate(-50%);
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #slider:hover {
